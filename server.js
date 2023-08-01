@@ -40,7 +40,7 @@ app.post("/api/notes", (req, res) => {
     }
     let currentNotes = JSON.parse(data); //json parse existing
     currentNotes.push(newNote); // add new notes (push)
-    fs.writeFile("db/db.json", JSON.stringify(currentNotes), (err) => {
+    fs.writeFile("db/db.json", JSON.stringify(currentNotes, null, 4), (err) => {
       //turnary
       err
         ? console.log("this the error", err)
